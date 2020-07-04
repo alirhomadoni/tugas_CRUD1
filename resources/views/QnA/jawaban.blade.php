@@ -16,18 +16,23 @@
         $url = $_SERVER["REQUEST_URI"];
         $p_id = str_replace("/jawaban","", $url);
         $filter = str_replace("/","", $p_id);
+        $num=1;
         ?>
+
         @foreach($jawaban as $key => $item)
 
-        <?php if ($item->pertanyaan_id==$filter){ ?>
+        <?php 
+        if ($item->pertanyaan_id==$filter){ ?>
             <tr>
-                <td colspan="1">{{$key+1}}</td>
+                <td colspan="1">{{$num}}</td>
                 <td colspan="7">{{$item->isi}}</td>
                 <td colspan ="3">
                 </td>
             
             </tr>
-        <?php } ?>
+        <?php 
+      $num++;
+      } ?>
         @endforeach
         
          </tbody>

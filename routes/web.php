@@ -23,3 +23,7 @@ Route::get('/temp',function(){
     return view('QnA/temp');
 }
 );
+Route::get('/pertanyaan/{id}','PertanyaanController@show');
+Route::get('/pertanyaan/{id}/edit','PertanyaanController@edit');
+Route::put('/pertanyaan/{id}','PertanyaanController@update');
+Route::delete('/pertanyaan/{id}','PertanyaanController@destroy');
